@@ -3,14 +3,14 @@
 // 1. Поиск ключа по значению
 // Найди ключ по значению (первое вхождение)
 // findKey({name: "John", age: 30}, "John") // → "name"
-function findKey(arr, string) {
-    for(let [key, value] of Object.entries(arr)) {
+function findKey(obj, string) {
+    for(let [key, value] of Object.entries(obj)) {
         if (value === string) {
             return key;
         }
-    }
-}
-console.log(findKey({name: "John", age: 30}, "John"));
+    } return 'The value is not found'
+};
+console.log(findKey({name: "John", age: 30}, "Anna"));
 
 // 2. Поменяй ключи и значения местами
 // invertObject({a: "x", b: "y"}) // → {x: "a", y: "b"}

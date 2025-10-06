@@ -3,10 +3,18 @@
 // 1. Поиск ключа по значению
 // Найди ключ по значению (первое вхождение)
 // findKey({name: "John", age: 30}, "John") // → "name"
-
+function findKey(arr, string) {
+    for(let [key, value] of Object.entries(arr)) {
+        if (value === string) {
+            return key;
+        }
+    }
+}
+console.log(findKey({name: "John", age: 30}, "John"));
 
 // 2. Поменяй ключи и значения местами
 // invertObject({a: "x", b: "y"}) // → {x: "a", y: "b"}
+
 
 
 // 3. Верни объект только с числовыми значениями

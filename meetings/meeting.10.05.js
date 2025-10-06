@@ -41,10 +41,10 @@ console.log(findKey({ name: "John", age: 30 }, "John"));
 // 8. Сгруппируй строки по их длине
 // groupByLength(["a", "bb", "ccc", "dd", "eee"]) // → {1: ["a"], 2: ["bb", "dd"], 3: ["ccc", "eee"]}
 let arrayOfElements = ["a", "bb", "ccc", "dd", "eee"];
-let objGroupByLength = {};
 
 function groupByLength(array) {
-    for(let element of array) {
+    let objGroupByLength = {};
+    for (let element of array) {
         if (objGroupByLength[element.length] === undefined) {
             objGroupByLength[element.length] = [];
         }

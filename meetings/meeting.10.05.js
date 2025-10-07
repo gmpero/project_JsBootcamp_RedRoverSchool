@@ -26,25 +26,25 @@ console.log(findKey({ name: "John", age: 30 }, "John"));
 // 4. Добавь префикс ко всем ключам
 // addPrefix({name: "John", age: 30}, "user_") // → {user_name: "John", user_age: 30}
 
-function addPrefix(obj, str){
-    for (const key of Object.keys(obj)){
-        obj[str + key] = obj[key];
-        delete obj[key];
+function addPrefix(object, prefix){
+    let newObject = new Object();
+    for (const key of Object.keys(object)){
+        newObject[prefix + key] = object[key];
     }
-    return obj;
+    return newObject;
 }
-console.log(addPrefix({name: "John", age: 30}, "user_"))
+console.log(addPrefix({name: "John", age: 30}, "user_"));
 
 // 5. Раздели массив на четные и нечетные числа
 // splitEvenOdd([1, 2, 3, 4, 5]) // → {even: [2, 4], odd: [1, 3, 5]}
 
-function splitEvenOdd(arr){
-    let obj ={
+function splitEvenOdd(arrayNumbers){
+    let object ={
         even: [],
         odd: []
-    }
-    arr.forEach(el => el % 2 == 0? obj.even.push(el) : obj.odd.push(el))
-    return obj;
+    };
+    arrayNumbers.forEach(el => el % 2 == 0 ? object.even.push(el) : object.odd.push(el));
+    return object;
 }
 console.log(splitEvenOdd([1, 2, 3, 4, 5]));
 

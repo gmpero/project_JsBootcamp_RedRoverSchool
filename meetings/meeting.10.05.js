@@ -26,9 +26,27 @@ console.log(findKey({ name: "John", age: 30 }, "John"));
 // 4. Добавь префикс ко всем ключам
 // addPrefix({name: "John", age: 30}, "user_") // → {user_name: "John", user_age: 30}
 
+function addPrefix(object, prefix){
+    let newObject = new Object();
+    for (const key of Object.keys(object)){
+        newObject[prefix + key] = object[key];
+    }
+    return newObject;
+}
+console.log(addPrefix({name: "John", age: 30}, "user_"));
 
 // 5. Раздели массив на четные и нечетные числа
 // splitEvenOdd([1, 2, 3, 4, 5]) // → {even: [2, 4], odd: [1, 3, 5]}
+
+function splitEvenOdd(arrayNumbers){
+    let object ={
+        even: [],
+        odd: []
+    };
+    arrayNumbers.forEach(el => el % 2 == 0 ? object.even.push(el) : object.odd.push(el));
+    return object;
+}
+console.log(splitEvenOdd([1, 2, 3, 4, 5]));
 
 // 6. Посчитай количество каждого элемента
 // countElements(["a", "b", "a", "c", "b"]) // → {a: 2, b: 2, c: 1}
